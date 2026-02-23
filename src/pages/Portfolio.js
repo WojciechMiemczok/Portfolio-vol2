@@ -1,79 +1,92 @@
-import React from 'react';
-//import images
-import Image1 from '../img/portfolio/1.png';
-import Image2 from '../img/portfolio/2.png';
-import Image3 from '../img/portfolio/3.png';
-import Image4 from '../img/portfolio/4.png';
-import Image5 from '../img/portfolio/5.png';
-import Image6 from '../img/portfolio/6.png';
-import Image7 from '../img/portfolio/7.png';
-import Image8 from '../img/portfolio/8.png';
-import Image9 from '../img/portfolio/9.png';
-
-//import link
-import { Link } from 'react-router-dom'
-//import icons
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
+import { motion, AnimatePresence } from "framer-motion";
+import { transition1 } from "../transitions";
 
-const Portfolio = () => {
-  return ( 
-  <section className='section'>
-    <div className='container mx-auto h-full relative'>
-      <div className='flex flex-col lg:flex-row h-full items-center justify-start gap-x-24 text-center lg:text-left pt-24 lg:pt-36 pb-8'>
-        {/* text */}
-        <div className='flex flex-col lg:items-start'>
-          <h1 className='h1'>Portfolio</h1>
-          <p className='mb-12 max-w-sm'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, 
-          <br />
-          <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, 
-          </p>
-          <Link to={'/contact'} className='btn mb-[30px] mx-auto lg:mx-0'>
-            Hire me
-          </Link>
+const imagesData = [
+  { id: 1, category: "nature", src: "https://picsum.photos/id/1015/400/300" },
+  { id: 2, category: "nature", src: "https://picsum.photos/id/1011/400/300" },
+  { id: 3, category: "city", src: "https://picsum.photos/id/1012/400/300" },
+  { id: 4, category: "animals", src: "https://picsum.photos/id/1025/400/300" },
+  { id: 5, category: "nature", src: "https://picsum.photos/id/1035/400/300" }
+];
+
+function Portfolio() {
+  const [filter, setFilter] = useState("all");
+
+  const filteredImages =
+    filter === "all"
+      ? imagesData
+      : imagesData.filter(img => img.category === filter);
+
+  return (
+    <section className="min-h-screen text-black px-6 py-16">
+      <div className="mt-20 max-w-6xl mx-auto">
+
+        <h1 className="h1 text-center mb-12">
+          Portfolio
+        </h1>
+
+        {/* Przyciski kategorii */}
+        <div className="flex flex-wrap font-semibold justify-center gap-4 mb-12 text-[#696c6d]">
+          {["all", "nature", "city", "animals"].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              className={`relative px-6 py-2 transition-all duration-300 text-lg font-medium
+                ${filter === cat ? "text-black" : "text-[#696c6d] hover:text-black"}`}
+            >
+              {cat === "all"
+                ? "Wszystkie"
+                : cat === "nature"
+                ? "Natura"
+                : cat === "city"
+                ? "Miasto"
+                : "Zwierzęta"}
+
+              {/* Zaokrąglona underline tylko dla aktywnego */}
+              <span
+                className={`absolute left-0 -bottom-0 h-[2px] w-full bg-[#696c6d8a] rounded-full
+                origin-center transform transition-transform duration-300
+                ${filter === cat ? "scale-x-[75%]" : "scale-x-0"}`}
+              ></span>
+            </button>
+            ))}
         </div>
-        {/* image grid */}
-        <div className='grid grid-cols-3 lg:gap-2'>
-          {/* image */}
-          <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-            <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image1} />
-          </div>
-          <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-            <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image2} />
-          </div>
-          <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-            <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image3} />
-          </div>
-          <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-            <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image4} />
-          </div>
-          <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-            <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image5} />
-          </div>
-          <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-            <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image6} />
-          </div>
-          <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-            <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image7} />
-          </div>
-          <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-            <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image8} />
-          </div>
-          <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-            <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image9} />
-          </div>
+
+        {/* Galeria */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <AnimatePresence>
+          {filteredImages.map(image => (
+            <motion.div 
+            key={image.id}
+            layout
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0, z:10 }}
+            transition={{ ...transition1, duration: 0.4,  }}
+            className="overflow-hidden rounded-xl group">
+              
+              <img
+                src={image.src}
+                alt=""
+                className="w-full h-64 object-cover transition duration-300 ease group-hover:opacity-[50%]"
+              />
+            </motion.div>
+          ))}
+        </AnimatePresence>
         </div>
       </div>
-    </div>
-    {/* next page arrow */}
-    <div className='text-4xl text-white fixed bottom-10 right-10 z-50'>
-      <Link to={'/contact'}>
-        <MdOutlineKeyboardDoubleArrowDown />
-      </Link>
-    </div>
-  </section>
+
+      {/* Strzałka */}
+      <div className="lg:hidden text-4xl fixed bottom-10 right-10 z-50">
+        <Link to="/contact">
+          <MdOutlineKeyboardDoubleArrowDown />
+        </Link>
+      </div>
+    </section>
   );
-};
+}
 
 export default Portfolio;

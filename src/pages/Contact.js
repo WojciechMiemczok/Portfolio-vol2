@@ -57,7 +57,7 @@ const Contact = () => {
       </div>
     </div>
     {/* next page arrow */}
-    <div className='text-2xl text-black fixed bottom-10 right-10 z-50'>
+    <div className='lg:hidden text-2xl text-black fixed bottom-10 right-10 z-50'>
       <Link to={'/'}>
         <FaHouse />
       </Link>
