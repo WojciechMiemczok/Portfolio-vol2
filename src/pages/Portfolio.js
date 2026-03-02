@@ -9,38 +9,87 @@ import { transition1 } from "../transitions";
 
 
 
-// Import obrazów
-import Img1 from '../img/portfolio/1.jpg';
-import Img2 from '../img/portfolio/2.jpg';
-import Img3 from '../img/portfolio/3.jpg';
-import Img4 from '../img/portfolio/4.jpg';
-import Img5 from '../img/portfolio/5.jpg';
-import Img6 from '../img/portfolio/6.jpg';
-import Img7 from '../img/portfolio/7.jpg';
-import Img8 from '../img/portfolio/8.jpg';
-import Img9 from '../img/portfolio/9.jpg';
-import Img10 from '../img/portfolio/10.jpg';
-import Img11 from '../img/portfolio/11.jpg';
-import Img12 from '../img/portfolio/12.jpg';
-import Img13 from '../img/portfolio/13.jpg';
-import Img14 from '../img/portfolio/14.jpg';
+//zmienna do obrazów
+const link = 'https://i.imgur.com/';
 
-//Kategorie obrazów
+//Kategorie obrazów  portrait / sport / occasional / animals
 const imagesData = [
-  { id: 1, categories: ["repo", "portrait"], src: Img1 },
-  { id: 2, categories: ["nature"], src: Img2 },
-  { id: 3, categories: ["repo"], src: Img3 },
-  { id: 4, categories: ["animals", "nature"], src: Img4 },
-  { id: 5, categories: ["nature"], src: Img5 },
-  { id: 6, categories: ["nature"], src: Img6 },
-  { id: 7, categories: ["nature"], src: Img7 },
-  { id: 8, categories: ["repo"], src: Img8 },
-  { id: 9, categories: ["animals"], src: Img9 },
-  { id: 10, categories: ["nature"], src: Img10 },
-  { id: 11, categories: ["nature"], src: Img11 },
-  { id: 12, categories: ["nature"], src: Img12 },
-  { id: 13, categories: ["repo"], src: Img13 },
-  { id: 14, categories: ["animals"], src: Img14 },
+
+  //20 najlepszych zdjęć z róznych kategorii
+  { id: 1, categories: ["occasional"], src: link + 'w54THKX' + ".jpg" },
+  { id: 2, categories: ["portrait"], src: link + 'Gl9ijhZ' + ".jpg" },
+  { id: 3, categories: ["portrait"], src: link + 'MPxlErp' + ".jpg" },
+  { id: 4, categories: ["sport"], src: link + 'qNS6MRQ' + ".jpg" },
+  { id: 5, categories: ["occasional"], src: link + 'FocDGZu' + ".jpg" },
+  { id: 6, categories: ["portrait"], src: link + 'E7FJeGm' + ".jpg" },
+  { id: 7, categories: ["business"], src: link + 'Mvq3MO9' + ".jpg" },
+  { id: 8, categories: ["portrait"], src: link + 'njqQWgI' + ".jpg" },
+  { id: 9, categories: ["occasional"], src: link + 'VOncTSD' + ".jpg" },
+  { id: 10, categories: ["sport"], src: link + 'qq0GQLK' + ".jpg" },
+  { id: 11, categories: ["sport"], src: link + 'SvS8cWk' + ".jpg" },
+  { id: 12, categories: ["portrait"], src: link + '6YyU9OZ' + ".jpg" },
+  { id: 13, categories: ["business"], src: link + 'GwIxwJi' + ".jpg" },
+  { id: 14, categories: ["portrait"], src: link + '3GacUh3' + ".jpg" },
+  { id: 15, categories: ["sport"], src: link + 'qxrHRCV' + ".jpg" },
+  { id: 16, categories: ["occasional"], src: link + 'wlCr5zd' + ".jpg" },
+  { id: 17, categories: ["business"], src: link + 'WoPC9an' + ".jpg" },
+  { id: 18, categories: ["portrait"], src: link + 'Ot33JoX' + ".jpg" },
+  { id: 19, categories: ["sport"], src: link + 'C2vCkT6' + ".jpg" },
+  { id: 20, categories: ["animals"], src: link + '4j9pOhJ' + ".jpg" },
+
+
+  { id: 21, categories: ["portrait"], src: link + 'Y611Bg0' + ".jpg" },
+  { id: 22, categories: ["portrait"], src: link + 'mvme8j0' + ".jpg" },
+  { id: 23, categories: ["portrait"], src: link + 'xosG3tS' + ".jpg" },
+  { id: 24, categories: ["portrait"], src: link + '0YIj09s' + ".jpg" },
+  { id: 25, categories: ["portrait"], src: link + 'viw0XxE' + ".jpg" },
+  { id: 26, categories: ["portrait"], src: link + 'JuRYnDx' + ".jpg" },
+  { id: 27, categories: ["portrait"], src: link + 'E7FJeGm' + ".jpg" },
+  { id: 28, categories: ["portrait"], src: link + 'UVAVJ8n' + ".jpg" },
+  { id: 29, categories: ["portrait"], src: link + 'x8bhzDx' + ".jpg" },
+  { id: 30, categories: ["portrait"], src: link + 'U1PrL7b' + ".jpg" },
+  { id: 31, categories: ["portrait"], src: link + 'tSJ1QeP' + ".jpg" },
+  { id: 32, categories: ["portrait"], src: link + 'bwDdrqJ' + ".jpg" },
+  { id: 33, categories: ["portrait"], src: link + '8y3HSfr' + ".jpg" },
+  { id: 34, categories: ["portrait"], src: link + 'hkMjknC' + ".jpg" },
+  { id: 35, categories: ["portrait"], src: link + '0JWBOUR' + ".jpg" },
+  { id: 36, categories: ["portrait"], src: link + 'kUiWEOq' + ".jpg" },
+  { id: 37, categories: ["portrait"], src: link + 'Zdq7ylJ' + ".jpg" },
+  { id: 38, categories: ["portrait"], src: link + 'lq2bgSc' + ".jpg" },
+  { id: 39, categories: ["portrait"], src: link + 'zR1Zt31' + ".jpg" },
+  { id: 40, categories: ["portrait"], src: link + 'ZnQZBFj' + ".jpg" },
+  { id: 41, categories: ["portrait"], src: link + '5llpyeT' + ".jpg" },
+  { id: 42, categories: ["portrait"], src: link + 'rTUez5Y' + ".jpg" },
+  { id: 43, categories: ["portrait"], src: link + 'iX6CLjX' + ".jpg" },
+  { id: 44, categories: ["portrait"], src: link + 'KowlVHQ' + ".jpg" },
+  { id: 45, categories: ["portrait"], src: link + '4Pwj2HD' + ".jpg" },
+  { id: 46, categories: ["portrait"], src: link + 'J5KW8AA' + ".jpg" },
+  { id: 47, categories: ["portrait"], src: link + '2SLhoO0' + ".jpg" },
+  { id: 48, categories: ["portrait"], src: link + 'H3cY2Nj' + ".jpg" },
+  { id: 49, categories: ["portrait"], src: link + 'HOZO48X' + ".jpg" },
+  { id: 50, categories: ["portrait"], src: link + 'Yk6wbGF' + ".jpg" },
+  { id: 51, categories: ["portrait"], src: link + '8OMi6p6' + ".jpg" },
+  { id: 52, categories: ["portrait"], src: link + 'eeWJoy4' + ".jpg" },
+  { id: 53, categories: ["portrait"], src: link + 'sBiiEGR' + ".jpg" },
+  { id: 54, categories: ["portrait"], src: link + 'HeFmvVz' + ".jpg" },
+  { id: 55, categories: ["portrait"], src: link + 'tc996Ao' + ".jpg" },
+  { id: 56, categories: ["portrait"], src: link + 'utKq97Z' + ".jpg" },
+  { id: 57, categories: ["portrait"], src: link + 'JZUASue' + ".jpg" },
+  { id: 58, categories: ["portrait"], src: link + 'ieOM1lj' + ".jpg" },
+  { id: 59, categories: ["portrait"], src: link + 'syQz6G2' + ".jpg" },
+  { id: 60, categories: ["portrait"], src: link + 'HcE9QDO' + ".jpg" },
+  { id: 61, categories: ["portrait"], src: link + '5ufjN1r' + ".jpg" },
+  { id: 62, categories: ["portrait"], src: link + 'dteDD9b' + ".jpg" },
+  { id: 63, categories: ["portrait"], src: link + 'lo6fX9N' + ".jpg" },
+  { id: 64, categories: ["portrait"], src: link + '6fodtSY' + ".jpg" },
+  { id: 65, categories: ["portrait"], src: link + 'xyYLc9h' + ".jpg" },
+  { id: 66, categories: ["portrait"], src: link + 'Xtr8ll4' + ".jpg" },
+  // { id: , categories: ["portrait"], src: link + '' + ".jpg" },
+  // { id: , categories: ["portrait"], src: link + '' + ".jpg" },
+  // { id: , categories: ["portrait"], src: link + '' + ".jpg" },
+  // { id: , categories: ["portrait"], src: link + '' + ".jpg" },
+  // { id: , categories: ["portrait"], src: link + '' + ".jpg" },
+  
 ];
 
 
@@ -119,7 +168,7 @@ function Portfolio() {
           transition={transition1}
           className="flex flex-wrap font-semibold justify-center gap-4 mb-12 text-[#696c6d]"
         >
-          {["all", "portrait", "repo", "sport", "occasional"].map((cat) => (
+          {["all", "portrait", "sport", "occasional", "business", "animals"].map((cat) => (
             <button
               key={cat}
               onClick={() => { setFilter(cat); setCurrentIndex(null); }}
@@ -128,8 +177,9 @@ function Portfolio() {
             >
               {cat === "all" ? "Wszystkie" : 
                cat === "portrait" ? "Portrety" : 
-               cat === "repo" ? "Reportaż" : 
-               cat === "sport" ? "Sportowe" : "Okazjonalne"}
+               cat === "sport" ? "Sportowe" : 
+               cat === "occasional" ? "Okazjonalne" : 
+               cat === "business" ? "Wizerunkowe" : "Zwierzęta"}
 
               <span className={`absolute left-0 -bottom-0 h-[2px] w-full bg-[#696c6d8a] rounded-full
                 origin-center transform transition-transform duration-300
@@ -146,7 +196,7 @@ function Portfolio() {
           exit={{ opacity: 0, scale: 0.3 }}
           transition={{ duration: 0.7 }}
           layout
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
         >
           <AnimatePresence>
             {filteredImages.map((image, index) => (
@@ -156,14 +206,14 @@ function Portfolio() {
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.5 }}
               onClick={() => setCurrentIndex(index)}
               className="flex justify-center items-center overflow-hidden group cursor-pointer" // Usunięte h-[250px]
             >
               <img
                 src={image.src}
                 alt=""
-                className="w-full object-cover transition duration-300 ease group-hover:opacity-50" // Przywrócone opacity
+                className="h-full object-cover transition duration-300 ease group-hover:opacity-50" // Przywrócone opacity
               />
             </motion.div>
             ))}
