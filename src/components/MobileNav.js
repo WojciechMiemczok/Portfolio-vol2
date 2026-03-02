@@ -47,16 +47,16 @@ const MobileNav = () => {
       {/* menu list */}
       <ul className='h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl'>
         <li>
-          <Link to='/'>Home</Link>
+          <Link to='/'>Start</Link>
         </li>
         <li>
-          <Link to='/about'>About</Link>
+          <Link to='/about'>O mnie</Link>
         </li>
         <li>
           <Link to='/portfolio'>Portfolio</Link>
         </li>
         <li>
-          <Link to='/contact'>Contact</Link>
+          <Link to='/contact'>Kontakt</Link>
         </li>
       </ul>
       </motion.div>

@@ -4,7 +4,8 @@ import React from 'react';
 import {
   FaFacebook,
   FaInstagram,
-  FaGoogle
+  FaGoogle,
+  FaGithub
 } from 'react-icons/fa'
 
 const Socials = () => {
@@ -13,6 +14,7 @@ const Socials = () => {
       <li><a href='https://www.instagram.com/miemczok_media/' target='_blank'><FaInstagram /></a></li>
       <li><a href='https://www.facebook.com/wojtek.miemczok/' target='_blank'><FaFacebook /></a></li>
       <li><a href='https://share.google/fupuHXDWMTFABIcQB' target='_blank'><FaGoogle /></a></li>
+      <li><a href='https://github.com/WojciechMiemczok' target='_blank'><FaGithub /></a></li>
     </ul>
   </div>;
 };

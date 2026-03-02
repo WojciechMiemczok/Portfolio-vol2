@@ -31,7 +31,7 @@ const Home = () => {
           <h1 className='h1 md:text-[100px] xl:text-[120px]'>Miemczok Media</h1>
           <h1 className='h1 md:text-[80px] xl:text-[100px]'>Fotograf</h1>
           <p className='text-[26] lg:text-[36px] md:text-[30px] font-primary mb-4 md:mb-12'>Kraków, Polska</p>
-          <Link to={'/contact'} className='btn mb-[30px]'>hire me</Link>
+          <Link to={'/contact'} className='btn mb-[30px]'>Umów sesję</Link>
         </motion.div>
         {/* image */}
         <motion.div 
@@ -47,10 +47,17 @@ const Home = () => {
         </motion.div>
 
       </div>
-    {/* next page arrow */}
-    <div className='lg:hidden text-4xl bg-[#0000006d] rounded-full shadow-[0_10px_25px_rgba(255,255,255,0.3)] text-white fixed bottom-10 right-10 z-50'>
+    {/* strzałka do następnej strony - widoczna tylko na mobile */}
+    <div className='lg:hidden fixed bottom-10 right-10 z-50'>
       <Link to={'/about'}>
-        <MdOutlineKeyboardDoubleArrowDown />
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+        
+          className='w-10 h-10 bg-white/90 backdrop-blur-sm text-black rounded-full flex items-center justify-center shadow-lg border border-gray-200'
+        >
+          <MdOutlineKeyboardDoubleArrowDown className='text-3xl' />
+        </motion.div>
       </Link>
     </div>
   </motion.section>
