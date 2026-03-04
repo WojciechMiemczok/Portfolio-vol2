@@ -30,10 +30,10 @@ const About = () => {
     >
       <div className='container mx-auto h-full relative'>
         {/* text & image wrapper */}
-        <div className='flex flex-col lg:flex-row h-full items-center justify-center gap-x-24 text-center lg:text-left pt-24 lg:pt-16'>
+        <div className='flex flex-col lg:flex-row h-full items-center justify-center gap-x-24 text-center lg:text-left pt-24 lg:ml-[100px] lg:pt-16'>
           
           {/* image */}
-          <div className='flex-1 max-h-64 lg:max-h-max order-2 lg:order-none overflow-hidden'>
+          <div className='flex-1 max-h-64 lg:max-h-[80%] order-2 lg:order-none overflow-hidden'>
             <img 
               src={ManImg} 
               alt="Fotograf" 
@@ -43,13 +43,13 @@ const About = () => {
 
           {/* text */}
           <motion.div 
-            initial={{ opacity: 0, y: '-80%' }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: '-80%' }}
+            initial={{ opacity: 0, x: '80%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '80%' }}
             transition={transition1}
             className='flex-1 pb-14 lg:pt-0 lg:w-auto z-10 flex flex-col justify-center items-center lg:items-start'
           >
-            <h1 className='h1'>O mnie</h1>
+            <h1 className='h1 text-[70px]'>O mnie</h1>
             <p className='mb-12 lg:text-[20px] max-w-sm px-4 lg:px-0'>
               Jestem fotografem, który w kadrach szuka przede wszystkim autentyczności i emocji. 
               Moją misją jest zamykanie ulotnych chwil w wizualne opowieści, w których światło współgra z prawdą o danym momencie.
