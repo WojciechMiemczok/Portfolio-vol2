@@ -81,20 +81,20 @@ const Contact = () => {
             <div className='w-full flex flex-col items-start gap-2 lg:gap-4'>
               <div className='flex items-center gap-3'>
                 <IoCall className='text-[20px] lg:text-[40px] text-teal-700'/>
-                <a className='text-[15px] lg:text-[20px]' href='tel:+48515183380'>+48 515-183-380</a>
+                <a className='text-[15px] lg:text-[20px] hover:text-[#00c8ff6d] transition' href='tel:+48515183380'>+48 515-183-380</a>
               </div>
               <div className='flex items-center gap-3'>
                 <IoMdMail className='text-[20px] lg:text-[40px] text-teal-700'/>
                
-                <a className='text-[15px] lg:text-[20px]' href='mailto:miemczok.media@gmail.com'>miemczok.media@gmail.com</a>
+                <a className='text-[15px] lg:text-[20px] hover:text-[#00c8ff6d] transition' href='mailto:miemczok.media@gmail.com'>miemczok.media@gmail.com</a>
               </div>
               <div className='flex items-center gap-3'>
                 <FaInstagram className='text-[20px] lg:text-[40px] text-teal-700'/>
-                <a className='text-[15px] lg:text-[20px]' target="_blank" rel="noreferrer" href='https://www.instagram.com/miemczok_media/'>@miemczok_media</a>
+                <a className='text-[15px] lg:text-[20px] hover:text-[#00c8ff6d] transition' target="_blank" rel="noreferrer" href='https://www.instagram.com/miemczok_media/'>@miemczok_media</a>
               </div>
               <div className='flex items-center gap-3'>
                 <FaFacebook className='text-[20px] lg:text-[40px] text-teal-700'/>
-                <a className='text-[15px] lg:text-[20px]' target="_blank" rel="noreferrer" href='https://www.facebook.com/wojtek.miemczok/'>Wojtek Miemczok</a>
+                <a className='text-[15px] lg:text-[20px] hover:text-[#00c8ff6d] transition' target="_blank" rel="noreferrer" href='https://www.facebook.com/wojtek.miemczok/'>Wojtek Miemczok</a>
               </div>
             </div>
           </motion.div>

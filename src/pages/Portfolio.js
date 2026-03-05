@@ -18,6 +18,7 @@ const imagesData = [
   //40 najlepszych zdjęć z róznych kategorii
 { id: 1, categories: ["all"], imgId: 'w54THKX' },
 { id: 2, categories: ["all"], imgId: 'Gl9ijhZ' },
+{ id: 226, categories: ["all"], imgId: 'dteDD9b' },
 { id: 3, categories: ["all"], imgId: 'MPxlErp' },
 { id: 4, categories: ["all"], imgId: 'qNS6MRQ' },
 { id: 5, categories: ["all"], imgId: 'FocDGZu' },
@@ -36,18 +37,39 @@ const imagesData = [
 { id: 18, categories: ["all"], imgId: 'Ot33JoX' },
 { id: 19, categories: ["all"], imgId: 'C2vCkT6' },
 { id: 20, categories: ["all"], imgId: '4j9pOhJ' },
+{ id: 207, categories: ["all"], imgId: '351TxLA' },
+{ id: 208, categories: ["all"], imgId: 'FcQvx18' },
+{ id: 209, categories: ["all"], imgId: 'I2rujcF' },
+{ id: 210, categories: ["all"], imgId: 'l9whu6C' },
+{ id: 211, categories: ["all"], imgId: '605Pv2X' },
+{ id: 212, categories: ["all"], imgId: 'O1M7amt' },
+{ id: 213, categories: ["all"], imgId: 'qPZOmNr' },
+{ id: 214, categories: ["all"], imgId: 'G18euf5' },
+{ id: 215, categories: ["all"], imgId: 'mvme8j0' },
+{ id: 216, categories: ["all"], imgId: 'xosG3tS' },
+{ id: 217, categories: ["all"], imgId: 'jdrIa2N' },
+{ id: 218, categories: ["all"], imgId: 'Zdq7ylJ' },
+{ id: 219, categories: ["all"], imgId: 'qKDzqNx' },
+{ id: 220, categories: ["all"], imgId: '0JWBOUR' },
+{ id: 221, categories: ["all"], imgId: 'TVDf23Q' },
+{ id: 222, categories: ["all"], imgId: 'ZnQZBFj' },
+{ id: 223, categories: ["all"], imgId: 'HOZO48X' },
+{ id: 224, categories: ["all"], imgId: 'sBiiEGR' },
+{ id: 225, categories: ["all"], imgId: 'tc996Ao' },
 
+
+//portrety
+{ id: 22, categories: ["portrait"], imgId: 'mvme8j0' },
 { id: 200, categories: ["portrait"], imgId: 'Gl9ijhZ' },
 { id: 201, categories: ["portrait"], imgId: 'MPxlErp' },
+{ id: 24, categories: ["portrait"], imgId: '0YIj09s' },
 { id: 202, categories: ["portrait"], imgId: 'E7FJeGm' },
-{ id: 203, categories: ["portrait"], imgId: 'njqQWgI' },
-{ id: 204, categories: ["portrait"], imgId: '6YyU9OZ' },
 { id: 205, categories: ["portrait"], imgId: '3GacUh3' },
 { id: 206, categories: ["portrait"], imgId: 'Ot33JoX' },
+{ id: 204, categories: ["portrait"], imgId: '6YyU9OZ' },
 { id: 21, categories: ["portrait"], imgId: 'Y611Bg0' },
-{ id: 22, categories: ["portrait"], imgId: 'mvme8j0' },
 { id: 23, categories: ["portrait"], imgId: 'xosG3tS' },
-{ id: 24, categories: ["portrait"], imgId: '0YIj09s' },
+{ id: 203, categories: ["portrait"], imgId: 'njqQWgI' },
 { id: 25, categories: ["portrait"], imgId: 'viw0XxE' },
 { id: 26, categories: ["portrait"], imgId: 'JuRYnDx' },
 { id: 27, categories: ["portrait"], imgId: 'E7FJeGm' },
@@ -336,25 +358,22 @@ function Portfolio() {
 
         {/* Galeria */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.3 }}
+          initial={{ opacity: 0, scale: 0, y: -50 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.3, y: -50 }}
           transition={{ duration: 0.7 }}
           layout
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
         >
-          <AnimatePresence mode="popLayout">
+          {/* zdjęcia w galerii */}
             {filteredImages.map((image, index) => (
             <motion.div 
               key={image.id}
               layout
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0 }}
-              transition={{ 
-                scale: { duration: 0.5 },
-                opacity: { duration: 0.6 },
-                layout: { type: "spring", stiffness: 500, damping: 30, mass: 2 }}}
+              initial={{ opacity: 0 , scale: 0, x: -100 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              exit={{ opacity: 0, scale:0, x: -100 }}
+              transition={transition1}
               onClick={() => setCurrentIndex(index)}
               className="flex justify-center items-center overflow-hidden group cursor-pointer" // Usunięte h-[250px]
             >
@@ -366,7 +385,7 @@ function Portfolio() {
               />
             </motion.div>
             ))}
-          </AnimatePresence>
+        
         </motion.div>
       </div>
 
